@@ -29,3 +29,11 @@ php artisan ide-helper:models - 为数据模型生成注释
 php artisan ide-helper:meta - 生成 PhpStorm Meta file
 
 ```
+
+### SQL Query Listenr 监听 SQL 便于开发
+
+配置 logging.channels.sql 
+sql 直接输出到 对应配置文件 如下
+```
+[2021-04-30 07:14:21] local.DEBUG: select count(*) as aggregate from `user`; RunTime: 6.53 ms
+```
