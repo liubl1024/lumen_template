@@ -39,23 +39,24 @@ return [
             'driver' => 'stack',
             'channels' => ['daily'],
         ],
-
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/lumen.log'),
             'level' => 'debug',
         ],
-
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/lumen.log'),
             'level' => 'debug',
+            'formatter'=> \App\Support\UDDateFormatter::class,
+            'date_formatter' => 'Y-m-d H:i:s.u', // 自定义配置 格式化 毫秒级时间戳
             'days' => 14,
         ],
         'sql' => [
             'driver' => 'single',
             'path' => storage_path('logs/sql.log'),
             'level' => 'debug',
+            'formatter'=> \App\Support\UDDateFormatter::class,
         ],
         'slack' => [
             'driver' => 'slack',

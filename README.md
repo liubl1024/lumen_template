@@ -37,3 +37,11 @@ sql 直接输出到 对应配置文件 如下
 ```
 [2021-04-30 07:14:21] local.DEBUG: select count(*) as aggregate from `user`; RunTime: 6.53 ms
 ```
+
+### 打印毫秒时间
+项目较大情况下 默认日志打印的时间粒度不够，为了更精细追踪日志，查看使用情况，可使用毫秒时间戳
+使用方法 引入 UDDateFormatter.php 文件后 在 logging.php 中添加对应 `formatter` `formatter_with` 即可
+```
+'formatter'=> \App\Support\UDDateFormatter::class,
+'date_formatter' => 'Y-m-d H:i:s.u', // 自定义配置 格式化 毫秒级时间戳
+```
