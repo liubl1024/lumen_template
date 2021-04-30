@@ -2,6 +2,14 @@
 
 基于 lumen8 添加一些个人使用的模板,方便开发使用
 
+主要包括: 
+- laravel-ide-helper
+- sql query 监听
+- 日志毫秒记录
+- api 统一响应
+- 结合 Swoole  
+
+
 ### laravel-ide-helper
 
 ```bash
