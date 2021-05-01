@@ -50,7 +50,7 @@ sql 直接输出到 对应配置文件 如下
 [2021-05-01 01:24:01.203839] local.DEBUG: record
 ```
 
-结合 Swoole 包 加速 Lumen
+### 结合 Swoole 包 加速 Lumen
 ```bash
 composer require  swooletw/laravel-swoole
 
