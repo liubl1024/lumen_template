@@ -45,3 +45,7 @@ sql 直接输出到 对应配置文件 如下
 'formatter'=> \App\Support\UDDateFormatter::class,
 'date_formatter' => 'Y-m-d H:i:s.u', // 自定义配置 格式化 毫秒级时间戳
 ```
+日志时间格式会直接带毫秒
+```bash
+[2021-05-01 01:24:01.203839] local.DEBUG: record
+```
