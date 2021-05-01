@@ -33,6 +33,12 @@ if(env('APP_ENV')=='local'){
     $app->register(Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
 }
 
+if(env('SWOOLE_MODE',false)){
+    $app->register(\SwooleTW\Http\LumenServiceProvider::class);
+    $app->configure('swoole_http');
+    $app->configure('swoole_websocket');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings

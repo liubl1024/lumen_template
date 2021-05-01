@@ -7,7 +7,7 @@
 - sql query 监听
 - 日志毫秒记录
 - api 统一响应
-- 结合 Swoole  
+- 结合 Swoole 包 加速 Lumen
 
 
 ### laravel-ide-helper
@@ -49,3 +49,12 @@ sql 直接输出到 对应配置文件 如下
 ```bash
 [2021-05-01 01:24:01.203839] local.DEBUG: record
 ```
+
+结合 Swoole 包 加速 Lumen
+```bash
+composer require  swooletw/laravel-swoole
+
+cp ../vendor/swooletw/laravel-swoole/config/swoole_*  config/
+```
+
+`SWOOLE_HTTP_WORKER_NUM` 根据系统内存设置 一般 一个 worker 需要 30M 左右内存
