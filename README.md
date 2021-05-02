@@ -58,3 +58,6 @@ cp ../vendor/swooletw/laravel-swoole/config/swoole_*  config/
 ```
 
 `SWOOLE_HTTP_WORKER_NUM` 根据系统内存设置 一般 一个 worker 需要 30M 左右内存
+, 可根据内存大小 / 30M 来分配 work 数量
+
+### 根据注释 统一返回 code message
