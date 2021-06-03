@@ -17,4 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/test', 'IndexController@get');
+
+$router->group(['middleware'=>'request_id'], function ($router) {
+    $router->get('/test', 'IndexController@get');
+});
+

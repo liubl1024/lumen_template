@@ -16,6 +16,7 @@ abstract class AbstractConstants
             throw new \Exception('The Code is required');
         }
 
+        // 输入 code 码
         $code = $arguments[0];
         $commentName = ucfirst(strtolower(substr($commentName, 3)));
 
@@ -24,6 +25,7 @@ abstract class AbstractConstants
         $reflectionClass = new \ReflectionClass($class);
 
         $constants = $reflectionClass->getConstants();
+        // 反查  code 码对应的  const
         $nameArr = array_keys($constants, $code);
 
         if (count($nameArr) > 1) {

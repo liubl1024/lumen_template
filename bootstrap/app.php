@@ -100,6 +100,10 @@ $app->configure('view');
 // $app->routeMiddleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
+$app->routeMiddleware([
+    'request_id' => \App\Http\Middleware\RequestId::class,
+]);
+
 
 /*
 |--------------------------------------------------------------------------
