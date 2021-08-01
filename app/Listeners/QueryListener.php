@@ -42,7 +42,7 @@ class QueryListener
                         $event->bindings[$i] = $binding->format("Y-m-d H:i:s.u");
                     } else {
                         if (is_string($binding)) {
-                            $event->bindings[$i] = "'{$binding}'";
+                            $event->bindings[$i] = $binding;
                         }
                     }
                 }

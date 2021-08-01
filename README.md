@@ -61,3 +61,6 @@ cp ../vendor/swooletw/laravel-swoole/config/swoole_*  config/
 , 可根据内存大小 / 30M 来分配 work 数量
 
 ### 根据注释 统一返回 code message
+
+### 添加 dump-server
+执行  php artisan dump-server  即可，看到 dump 时打印的输出，而不会影响正常项目的访问

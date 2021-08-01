@@ -31,6 +31,7 @@ $app->withEloquent();
 
 if(env('APP_ENV')=='local'){
     $app->register(Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+    $app->register(BeyondCode\DumpServer\DumpServerServiceProvider::class);
 }
 
 if(env('SWOOLE_MODE',false)){
