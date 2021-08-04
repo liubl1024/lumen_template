@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Constants\ResponseCode;
-use App\Helpers\Log;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
