@@ -53,10 +53,11 @@ return [
             'days' => 14,
         ],
         'sql' => [
-            'driver' => 'single',
-            'path' => storage_path('logs/sql.log'),
+            'driver' => 'daily',
+            'path' => storage_path('logs/sql/sql.log'),
             'level' => 'debug',
             'formatter'=> \App\Support\UDDateFormatter::class,
+            'days' => 14,
         ],
         'slack' => [
             'driver' => 'slack',

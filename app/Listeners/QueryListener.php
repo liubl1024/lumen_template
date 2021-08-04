@@ -4,9 +4,8 @@ namespace App\Listeners;
 
 use DateTime;
 use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Log\Logger;
 use Illuminate\Support\Facades\Log;
-use Monolog\Handler\RotatingFileHandler;
-use Monolog\Logger;
 
 /**
  * Class QueryListener
@@ -28,7 +27,7 @@ class QueryListener
     /**
      * Handle the event.
      *
-     * @param ExampleEvent $event
+     * @param QueryExecuted $event
      *
      * @return void
      */
@@ -47,6 +46,7 @@ class QueryListener
                     }
                 }
                 $log = vsprintf($sql, $event->bindings);
+                $this->initLog();
                 $log = "{$log}; RunTime: {$event->time} ms";
                 Log::channel("sql")->debug($log);
             }
@@ -54,6 +54,16 @@ class QueryListener
 
         }
 
+    }
+
+    public function initLog()
+    {
+        $logger = app()->make(Logger::class)->channel("sql");
+        $requestId = request()->headers->get('X-Request-ID');
+        $logger->pushProcessor(function ($record) use ($requestId) {
+            $record['message'] = $requestId . " ".  $record['message'];
+            return $record;
+        });
     }
 }
 
